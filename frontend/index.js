@@ -116,6 +116,46 @@ function debounce(func, wait) {
 
 const debouncedChangeAsciiArt = debounce(changeAsciiArt, 200);
 
+// Easter Egg
+const easterEggSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let easterEggProgress = 0;
+
+function checkEasterEgg(key) {
+    if (key === easterEggSequence[easterEggProgress]) {
+        easterEggProgress++;
+        if (easterEggProgress === easterEggSequence.length) {
+            triggerEasterEgg();
+            easterEggProgress = 0;
+        }
+    } else {
+        easterEggProgress = 0;
+    }
+}
+
+function triggerEasterEgg() {
+    const asciiArtElement = document.getElementById('ascii-art');
+    const artTitleElement = document.getElementById('art-title');
+    const artDescriptionElement = document.getElementById('art-description');
+
+    const easterEggArt = `
+       _____
+      /     \\
+     /  ^ ^  \\
+    |  (o o)  |
+    |  \\___/  |
+     \\  ---  /
+      \\_____/
+    `;
+
+    asciiArtElement.textContent = easterEggArt;
+    artTitleElement.textContent = "Easter Egg: Hidden Icon";
+    artDescriptionElement.textContent = "You've discovered a secret icon! This represents the joy and mystery of Orthodox faith.";
+
+    setTimeout(() => {
+        changeAsciiArt();
+    }, 5000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const asciiArtElement = document.getElementById('ascii-art');
     const artTitleElement = document.getElementById('art-title');
@@ -156,4 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
     navigationDiv.appendChild(prevButton);
     navigationDiv.appendChild(nextButton);
     document.querySelector('main').appendChild(navigationDiv);
+
+    // Easter Egg key listener
+    document.addEventListener('keydown', (e) => {
+        checkEasterEgg(e.key);
+    });
 });
