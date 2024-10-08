@@ -1,104 +1,90 @@
-const artworks = [
+const orthodoxThemes = [
     {
         art: `
-                   /\\                 /\\
-                  /  \\               /  \\
-                 /____\\             /____\\
-                /\\    /\\           /\\    /\\
-               /  \\  /  \\         /  \\  /  \\
-              /____\\/____\\       /____\\/____\\
-             /\\    ||    /\\     /\\    ||    /\\
-            /  \\   ||   /  \\   /  \\   ||   /  \\
-           /____\\  ||  /____\\ /____\\  ||  /____\\
-           \\    / _||_ \\    / \\    / _||_ \\    /
-            \\  / /\\  /\\ \\  /   \\  / /\\  /\\ \\  /
-             \\/ /  \\/  \\ \\/     \\/ /  \\/  \\ \\/
-             / /  (  )  \\ \\     / /  (  )  \\ \\
-            / /  ( \\/ )  \\ \\   / /  ( \\/ )  \\ \\
-           |  | |  \\/  | |  | |  | |  \\/  | |  |
-           |  | | /\\ / | |  | |  | | /\\ / | |  |
-           |  | |/ \\/ \\| |  | |  | |/ \\/ \\| |  |
-           |__|_||    ||_|_| |__|_||    ||_|__|
-              | ||____|| |     | ||____|| |
-              |________|       |________|
+    /\\
+   /  \\
+  /____\\
+ /\\    /\\
+/  \\  /  \\
+\\   \\/   /
+ \\_/\\/\\_/
+   /\\
+  /  \\
+ /____\\
         `,
-        title: "Saint Nicholas Cathedral",
-        description: "A detailed ASCII representation of Saint Nicholas Cathedral, showcasing its iconic domes and intricate architecture."
+        title: "Orthodox Cross",
+        description: "A simple representation of the Orthodox cross, symbolizing faith and redemption."
     },
     {
         art: `
-                 _____/\\\\\\\\_____
-                /\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-               /\\\\\\/////////\\\\\\\\\\
-              /\\\\\\/       \\/\\\\\\\\\\
-             /\\\\\\_______/\\\\\\\\\\\\\\
-            /\\\\\\///////////\\\\\\\\\\
-           \\//\\\\\\      /\\\\\\\\\\\\\\\\\\
-            \\///\\\\\\\\\\\\\\\\\\///////
-              \\///////\\\\\\///\\\\\\\\\\
-               _____/\\\\\\/___\\///\\\\
-              /\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_\\/\\\\
-             /\\\\\\/////////\\\\\\_\\/\\\\
-            \\/\\\\\\       \\/\\\\\\_\\/\\\\
-             \\//\\\\\\\\\\\\\\\\\\\\\\\\/\\\\\\\\\\
-              \\//////////__\\//////
-                   |  |  |
-                   |  |  |
-              _____|__|__|_____
-             |__________________|
+   _____
+  /     \\
+ /  / \\  \\
+|  | | |  |
+|  | | |  |
+ \\  \\_/  /
+  \\_____/
+    | |
+    | |
+    |_|
         `,
-        title: "Saint Basil's Cathedral",
-        description: "An intricate ASCII depiction of Saint Basil's Cathedral, highlighting its unique onion domes and colorful architecture."
+        title: "Orthodox Dome",
+        description: "An iconic onion dome, a distinctive feature of Orthodox church architecture."
     },
     {
         art: `
-                      ___________
-                     /  _______  \\
-                    /  /       \\  \\
-                   /  /  _____  \\  \\
-                  /  /  /     \\  \\  \\
-                 |  |  |  ___  |  |  |
-                 |  |  | |   | |  |  |
-                 |  |  | | O | |  |  |
-                 |  |  | |___| |  |  |
-                 |  |  |       |  |  |
-                 |  |  |  /-\\  |  |  |
-                 |  |  | (   ) |  |  |
-                 |  |  |  \\_/  |  |  |
-                 |  |  |   |   |  |  |
-            _____|  |  |___|___|  |  |_____
-           |     \\  \\  \\     /  /  /     |
-           |      \\  \\  \\___/  /  /      |
-           |       \\  \\       /  /       |
-           |        \\  \\_____/  /        |
-           |_________\\__________/_________|
-        `,
-        title: "Orthodox Chalice",
-        description: "A detailed ASCII representation of an Orthodox Chalice, symbolizing the Eucharist and the central role it plays in Orthodox liturgy."
+    ____
+   /    \\
+  / O  O \\
+ |   ^^   |
+ |  \\__/  |
+  \\      /
+   \\____/
+    `,
+        title: "Icon of Christ",
+        description: "A simplified representation of an icon of Jesus Christ, central to Orthodox worship."
     },
-    // ... (197 more artwork objects with unique ASCII art, titles, and descriptions)
+    {
+        art: `
+    /\\
+   /  \\
+  /____\\
+ |      |
+ | \\  / |
+ |  \\/  |
+ |      |
+ |______|
+    `,
+        title: "Orthodox Church",
+        description: "A basic outline of an Orthodox church building, representing the house of worship."
+    },
+    {
+        art: `
+   _   _
+  ( \\ / )
+   \\ V /
+   / . \\
+  / / \\ \\
+ /_/   \\_\\
+    `,
+        title: "Orthodox Vestments",
+        description: "A simplified depiction of Orthodox clerical vestments, worn during liturgical services."
+    },
+    // ... More predefined Orthodox-themed ASCII art pieces
 ];
 
-// Generate 197 more unique artworks
-for (let i = 3; i < 200; i++) {
-    const randomArt = generateRandomAsciiArt();
-    artworks.push({
-        art: randomArt,
-        title: `Artwork ${i + 1}`,
-        description: `A unique ASCII artwork representing various aspects of Russian Orthodox art and liturgy.`
-    });
-}
+const artworks = [];
 
-function generateRandomAsciiArt() {
-    const characters = ['/', '\\', '|', '-', '_', '+', '=', '*', '.', ' '];
-    let art = '';
-    for (let i = 0; i < 20; i++) {
-        for (let j = 0; j < 40; j++) {
-            art += characters[Math.floor(Math.random() * characters.length)];
-        }
-        art += '\n';
-    }
-    return art;
+// Generate 200 artworks based on Orthodox themes
+for (let i = 0; i < 200; i++) {
+    const themeIndex = i % orthodoxThemes.length;
+    const theme = orthodoxThemes[themeIndex];
+    
+    artworks.push({
+        art: theme.art,
+        title: `${theme.title} - Variation ${Math.floor(i / orthodoxThemes.length) + 1}`,
+        description: theme.description
+    });
 }
 
 let currentArtIndex = 0;
