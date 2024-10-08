@@ -50,7 +50,7 @@ main {
 }
 
 .ascii-item pre {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1;
     color: var(--deep-red);
     margin: 0;
@@ -80,7 +80,7 @@ footer {
     }
 
     .ascii-item pre {
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 
