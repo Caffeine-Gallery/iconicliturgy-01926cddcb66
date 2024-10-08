@@ -9,9 +9,12 @@ body {
     font-family: 'Times New Roman', serif;
     background-color: var(--ivory);
     color: #333;
-    line-height: 1.6;
+    line-height: 1;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -29,40 +32,20 @@ h1 {
 }
 
 main {
-    max-width: 1600px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.ascii-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.ascii-item {
-    background-color: #fff;
-    border: 1px solid var(--gold);
-    border-radius: 5px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
 }
 
-.ascii-item pre {
+#ascii-art {
+    font-family: monospace;
     font-size: 10px;
     line-height: 1;
-    color: var(--deep-red);
-    margin: 0;
-    padding: 0;
     white-space: pre;
-    overflow: hidden;
-}
-
-.ascii-item p {
-    margin-top: 0.5rem;
-    font-weight: bold;
-    color: var(--navy);
+    color: var(--deep-red);
+    text-align: center;
 }
 
 footer {
@@ -71,25 +54,10 @@ footer {
     text-align: center;
     padding: 1rem;
     border-top: 5px solid var(--gold);
-    margin-top: 2rem;
-}
-
-@media (max-width: 1200px) {
-    .ascii-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .ascii-item pre {
-        font-size: 9px;
-    }
 }
 
 @media (max-width: 768px) {
-    .ascii-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .ascii-item pre {
+    #ascii-art {
         font-size: 8px;
     }
 }
