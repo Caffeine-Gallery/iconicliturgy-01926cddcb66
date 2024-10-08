@@ -37,15 +37,18 @@ main {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    overflow: hidden;
 }
 
 #ascii-art {
     font-family: monospace;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1;
     white-space: pre;
     color: var(--deep-red);
     text-align: center;
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
 footer {
@@ -56,7 +59,19 @@ footer {
     border-top: 5px solid var(--gold);
 }
 
+@media (max-width: 1200px) {
+    #ascii-art {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 768px) {
+    #ascii-art {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
     #ascii-art {
         font-size: 8px;
     }

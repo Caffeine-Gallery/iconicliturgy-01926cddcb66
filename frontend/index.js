@@ -70,7 +70,6 @@ function changeAsciiArt() {
     asciiArtElement.textContent = asciiArt[currentArtIndex];
 }
 
-// Debounce function to limit the rate of ASCII art changes
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -90,4 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
     asciiArtElement.textContent = asciiArt[currentArtIndex];
 
     document.addEventListener('mousemove', debouncedChangeAsciiArt);
+
+    // Add zoom functionality
+    let scale = 1;
+    document.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        scale += e.deltaY * -0.001;
+        scale = Math.min(Math.max(0.5, scale), 2);
+        asciiArtElement.style.transform = `scale(${scale})`;
+    });
 });
