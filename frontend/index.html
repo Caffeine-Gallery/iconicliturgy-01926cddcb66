@@ -7,28 +7,64 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1>Russian Orthodox Art & Liturgy</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#artwork">Artwork</a></li>
-            <li><a href="#liturgy">Liturgy</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="artwork">
-            <h2>Iconic Artwork</h2>
-            <div id="artwork-gallery"></div>
-        </section>
-        <section id="liturgy">
-            <h2>Liturgical Texts</h2>
-            <div id="liturgy-texts"></div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Russian Orthodox Art & Liturgy</p>
-    </footer>
+    <div class="ascii-art left">
+        <!-- ASCII art of Orthodox saint -->
+        <pre>
+   /\
+  /  \
+ /____\
+ |    |
+ |()()| 
+ |    |
+ |    |
+/|/\/\|\
+        </pre>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Russian Orthodox Art & Liturgy</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#artwork">Artwork</a></li>
+                <li><a href="#liturgy">Liturgy</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="artwork">
+                <h2>Iconic Artwork</h2>
+                <div id="artwork-gallery"></div>
+            </section>
+            <section id="liturgy">
+                <h2>Liturgical Texts</h2>
+                <div id="liturgy-texts"></div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Russian Orthodox Art & Liturgy</p>
+        </footer>
+    </div>
+    <div class="ascii-art right">
+        <!-- ASCII art of Orthodox saint -->
+        <pre>
+    _____
+   /     \
+  /  / \  \
+ /  /   \  \
+|  |     |  |
+|  |     |  |
+ \  \   /  /
+  \  \ /  /
+   \_____/
+        </pre>
+    </div>
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="detail-title"></h2>
+            <p id="detail-text"></p>
+        </div>
+    </div>
     <script type="module" src="index.js"></script>
 </body>
 </html>

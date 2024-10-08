@@ -1,6 +1,7 @@
 type LiturgyText = 
  record {
    content: text;
+   detailText: text;
    id: nat;
    title: text;
  };
@@ -8,14 +9,17 @@ type Artwork =
  record {
    artist: text;
    description: text;
+   detailText: text;
    id: nat;
    imageUrl: text;
    title: text;
  };
 service : {
-  addArtwork: (text, text, text, text) -> (nat);
-  addLiturgyText: (text, text) -> (nat);
+  addArtwork: (text, text, text, text, text) -> (nat);
+  addLiturgyText: (text, text, text) -> (nat);
+  getArtwork: (nat) -> (opt Artwork) query;
   getArtworks: () -> (vec Artwork) query;
+  getLiturgyText: (nat) -> (opt LiturgyText) query;
   getLiturgyTexts: () -> (vec LiturgyText) query;
   initializeData: () -> ();
 }
