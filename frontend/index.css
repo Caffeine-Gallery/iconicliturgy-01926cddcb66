@@ -3,18 +3,26 @@
     --deep-red: #8B0000;
     --navy: #000080;
     --ivory: #FFFFF0;
+    --black: #000000;
+    --white: #FFFFFF;
 }
 
 body {
     font-family: 'Times New Roman', serif;
     background-color: var(--ivory);
-    color: #333;
+    color: var(--black);
     line-height: 1;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.inverted {
+    background-color: var(--black);
+    color: var(--ivory);
 }
 
 header {
@@ -23,6 +31,12 @@ header {
     text-align: center;
     padding: 1rem;
     border-bottom: 5px solid var(--gold);
+}
+
+body.inverted header {
+    background-color: var(--gold);
+    color: var(--deep-red);
+    border-bottom-color: var(--deep-red);
 }
 
 h1 {
@@ -56,22 +70,36 @@ main {
     color: var(--deep-red);
     text-align: center;
     transform-origin: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s;
     margin-bottom: 1rem;
+}
+
+body.inverted #ascii-art {
+    color: var(--gold);
 }
 
 #art-title {
     font-size: 1.5rem;
     color: var(--navy);
     margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+body.inverted #art-title {
+    color: var(--gold);
 }
 
 #art-description {
     font-size: 1rem;
-    color: #333;
+    color: var(--black);
     text-align: center;
     max-width: 600px;
     margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+body.inverted #art-description {
+    color: var(--white);
 }
 
 button {
@@ -82,11 +110,20 @@ button {
     margin: 0 0.5rem;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.inverted button {
+    background-color: var(--gold);
+    color: var(--deep-red);
 }
 
 button:hover {
     background-color: var(--navy);
+}
+
+body.inverted button:hover {
+    background-color: var(--ivory);
 }
 
 footer {
@@ -95,6 +132,13 @@ footer {
     text-align: center;
     padding: 1rem;
     border-top: 5px solid var(--gold);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.inverted footer {
+    background-color: var(--gold);
+    color: var(--deep-red);
+    border-top-color: var(--deep-red);
 }
 
 @media (max-width: 1200px) {

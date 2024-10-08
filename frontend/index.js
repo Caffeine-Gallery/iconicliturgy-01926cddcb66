@@ -156,6 +156,10 @@ function triggerEasterEgg() {
     }, 5000);
 }
 
+function toggleInvert() {
+    document.body.classList.toggle('inverted');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const asciiArtElement = document.getElementById('ascii-art');
     const artTitleElement = document.getElementById('art-title');
@@ -201,4 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         checkEasterEgg(e.key);
     });
+
+    // Invert toggle
+    const invertToggle = document.getElementById('invert-toggle');
+    invertToggle.addEventListener('click', toggleInvert);
 });
